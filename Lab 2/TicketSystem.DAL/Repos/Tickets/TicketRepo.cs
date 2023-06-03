@@ -17,7 +17,7 @@ public class TicketRepo: ITicketsRepo
     public IEnumerable<Ticket> GetAllTickets()
     {
         //return _context.Tickets;
-        return _context.Set<Ticket>();
+        return _context.Set<Ticket>().AsNoTracking();
     }
 
     public Ticket? GetTicketById(int id)
@@ -30,9 +30,9 @@ public class TicketRepo: ITicketsRepo
         _context.Set<Ticket>().Add(ticket);
     }
 
-    public void UpdatTicket(Ticket ticket)
+    public void UpdateTicket(Ticket ticket)
     {
-        throw new NotImplementedException();
+        //_context.Set<Ticket>().Update(ticket);
     }
 
     public void DeleteTicket(Ticket ticket)
@@ -42,6 +42,6 @@ public class TicketRepo: ITicketsRepo
 
     public int SaveChanges()
     {
-        return _context.SaveChanges ();
+        return _context.SaveChanges();
     }
 }

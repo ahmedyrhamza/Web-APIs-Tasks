@@ -11,7 +11,7 @@ public interface ITicketsRepo
     IEnumerable<Ticket> GetAllTickets();
     Ticket? GetTicketById(int id);
     void AddTicket(Ticket ticket);
-    void UpdatTicket(Ticket ticket);
+    void UpdateTicket(Ticket ticket);
     void DeleteTicket(Ticket ticket);
     int SaveChanges();
 }
